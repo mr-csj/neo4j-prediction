@@ -1,0 +1,18 @@
+<script th:src="@{/scripts/team/new.js}"></script>
+<form id="saveForm" action="./save" method="post">
+    <table class="addNewInfList">
+        <tr>
+            <th>名称</th>
+            <td width="240">
+                <input class="inp-list w-200 clear-mr f-left" type="text" name="name" id="name" maxlength="32" />
+                <span class="tipStar f-left">*</span>
+            </td>
+            <th>代码</th>
+            <td width="240"><input class="inp-list w-200 clear-mr f-left" type="text" name="code" id="code"/></td>
+        </tr>
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript: closeDialog()">返回</a>
+    </div>
+</form>

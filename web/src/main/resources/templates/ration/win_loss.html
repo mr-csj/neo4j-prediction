@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>输赢预测</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/artDialog/artDialog.js}" />
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+    <script th:src="@{/scripts/ration/win_loss.js}"></script>
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >输赢预测</em>
+</div>
+<div class="statisticBox w-782"  layout:fragment="content">
+    <form id="queryForm" method="get">
+    <div class="radiusGrayBox782">
+        <div class="radiusGrayTop782"></div>
+        <div class="radiusGrayMid782">
+            <div class="dataSearchBox forUserRadius">
+                <ul>
+                    <li>
+                        <label class="preInpTxt f-left">甲队</label>
+                        <div class="selectDownMode f-left w-206">
+                            <input type="text"  value="请选择"/>
+                            <select class="selectMode" name="t1" id="t1">
+                                <option value="0">请选择</option>
+                                <option th:each="team:${teams}" th:value="${team.name}"
+                                        th:text="${#strings.length(team.name)>20?#strings.substring(team.name,0,20)+'...':team.name}"
+                                        ></option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="preInpTxt f-left">乙队</label>
+                        <div class="selectDownMode f-left w-206">
+                            <input type="text"  value="请选择"/>
+                            <select class="selectMode" name="t2" id="t2">
+                                <option value="">请选择</option>
+                                <option th:each="team:${teams}" th:value="${team.name}"
+                                        th:text="${#strings.length(team.name)>20?#strings.substring(team.name,0,20)+'...':team.name}"
+                                        ></option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="blueBtn-62X30 f-right" id="searchBtn">查询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <div id="netContent"></div>
+    </form>
+        <div class="dataDetailList mt-12">
+        <table class="dataListTab">
+            <thead id="theadContent">
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>性别</th>
+            </tr>
+            </thead>
+            <tbody id="tbodyContent">
+            </tbody>
+        </table>
+            <!--<div class="tableFootLine">-->
+                <!--<div class="pagebarList pagination"/>-->
+            <!--</div>-->
+    </div>
+</div>
+</body>
+</html>

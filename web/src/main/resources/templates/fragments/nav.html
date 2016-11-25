@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div th:fragment="nav">
+
+    <div class="columnLeftMenu">
+
+        <h6 ><span class="f-right"></span>系统管理</h6>
+        <ul >
+            <li><a th:classappend="${page == 'east/index' ? 'currentPageNav' : ''}" th:href="@{/east/index}">球队管理</a></li>
+            <li><a th:classappend="${page == 'playoff/index' ? 'currentPageNav' : ''}" th:href="@{/playoff/index}">赛程管理</a></li>
+            <li><a th:classappend="${page == 'winning/index' ? 'currentPageNav' : ''}" th:href="@{/winning/index}">比赛结果</a></li>
+            <li><a th:classappend="${page == 'ration/index' ? 'currentPageNav' : ''}" th:href="@{/ration/index}">胜率排名</a></li>
+            <li><a th:classappend="${page == 'ration/winloss' ? 'currentPageNav' : ''}" th:href="@{/ration/winloss}">输赢预测</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

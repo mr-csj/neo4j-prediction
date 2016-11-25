@@ -1,0 +1,69 @@
+<script th:src="@{/scripts/winning/new.js}"></script>
+<form id="saveForm" method="post">
+<div class="addInfBtn" >
+    <h3 class="itemTit"><span>比赛结果</span></h3>
+    <table class="addNewInfList">
+        <tr>
+            <th>甲队</th>
+            <td width="240">
+                <div class="selectDownMode f-left w-206">
+                    <input type="text"  value="请选择"/>
+                    <select class="selectMode" name="t1" id="t1">
+                        <option value="0">请选择</option>
+                        <option th:each="team:${teams}" th:value="${team.id}"
+                                th:text="${#strings.length(team.name)>20?#strings.substring(team.name,0,20)+'...':team.name}"
+                                ></option>
+                    </select>
+                </div>
+                <span class="tipStar f-left">*</span>
+            </td>
+            <th>乙队</th>
+            <td width="240">
+                <div class="selectDownMode f-left w-206">
+                    <input type="text"  value="请选择"/>
+                    <select class="selectMode" name="t2" id="t2">
+                        <option value="0">请选择</option>
+                        <option th:each="team:${teams}" th:value="${team.id}"
+                                th:text="${#strings.length(team.name)>20?#strings.substring(team.name,0,20)+'...':team.name}"
+                                ></option>
+                    </select>
+                </div>
+                <span class="tipStar f-left">*</span>
+            </td>
+        </tr>
+        <tr>
+            <th>甲赢场数</th>
+            <td width="240">
+                <input class="inp-list w-200 clear-mr f-left" type="text" id="win" name="win" maxlength="16" />
+                <span class="tipStar f-left">*</span>
+            </td>
+            <th>乙赢场数</th>
+            <td width="240">
+                <input class="inp-list w-200 clear-mr f-left" type="text" id="loss" name="loss" maxlength="16" />
+                <span class="tipStar f-left">*</span>
+            </td>
+        </tr>
+        <tr>
+            <th>赛程</th>
+            <td width="240">
+                <div class="selectDownMode f-left w-206">
+                    <input type="text"  value="请选择"/>
+                    <select class="selectMode" name="pid" id="pid">
+                        <option value="">请选择</option>
+                        <option th:each="playoff:${playoffs}" th:value="${playoff.id}"
+                                th:text="${#strings.length(playoff.round)>20?#playoff.year+':'+strings.substring(playoff.round,0,20)+'...':playoff.year+':'+playoff.round}"
+                                ></option>
+                    </select>
+                </div>
+                <span class="tipStar f-left">*</span>
+            </td>
+
+        </tr>
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript:closeDialog(0)">返回</a>
+    </div>
+</div>
+
+</form>
