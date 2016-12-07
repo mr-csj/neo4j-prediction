@@ -55,6 +55,6 @@ public class DataTest {
     public void get(){
         Set<Map<String,Object>> maps = ratioRepository.findWinAndLoss("东部一队", "西部一队");
         Assert.notEmpty(maps);
-        log.info("==========Year:{} =============", maps.iterator().next().get("year"));
+        log.info("\n==========Year:{} =============", maps.iterator().next().get("year"));
     }
 }
