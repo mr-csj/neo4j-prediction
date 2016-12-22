@@ -25,7 +25,7 @@ function fillData(data){
         head += '<th>赢场</th>';
         head += '<th>输场</th>';
     }else{
-        head += '<th>赢场对比：甲队,乙队...</th>';
+        head += '<th>比赛历史：[甲队,其它球队],...</th>';
     }
     head += '</tr>';
     $head.append($(head));
