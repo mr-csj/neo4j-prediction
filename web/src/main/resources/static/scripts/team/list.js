@@ -2,7 +2,7 @@ $(function () {
     $('#searchBtn').click(function(){
         pageaction();
     });
-    $('#addUserInf').click(function(){
+    $('#addInfo').click(function(){
         create();
     });
     //初始化分页
